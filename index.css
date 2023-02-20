@@ -153,14 +153,18 @@ header {
     margin: 0 0 0 0.2rem;
 }
 
-.movie-runtime-container {
+.movie-middle-section, .movie-runtime-container, .add-to-watchlist-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
+.movie-runtime {
+    margin: 0;
+}
+
 .movie-genre {
-    margin-left: 2rem;
+    margin: 0 0 0 2rem;
 }
 
 .plus-icon {
@@ -227,6 +231,59 @@ header {
 
     .film-icon {
         margin: 12rem 0 1rem 0;
+    }
+
+    /* Film section with movies */
+
+    .movie {
+        margin: 1rem 1.5rem 0rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .movie-poster {
+        height: 12rem
+    }
+
+    .movie-title {
+        font-size: 1rem;
+    }
+
+    .star-icon {
+        font-size: 0.7rem;
+    }
+
+    .movie-rating {
+        font-size: 0.9rem;
+    }
+
+    .movie-middle-section {
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content:  flex-start;
+        flex-direction: column;
+    }
+
+    .movie-middle-section {
+        margin-top: 0.5rem;
+    }
+
+    .movie-genre {
+        margin-left: 0.8rem;
+    }
+
+    .plus-icon {
+        margin-left: 0;
+    }
+
+    .movie-runtime, .movie-genre, .plus-icon, .add-to-watchlist-text {
+        font-size: 0.7rem;
+    }
+
+    .movie-description {
+        font-size: 0.7rem;
     }
 }
 
