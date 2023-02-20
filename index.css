@@ -1,0 +1,53 @@
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(14, 14, 14);
+}
+
+/* Header Section */
+
+header {
+    height: 15rem;
+    width: 100%;
+}
+
+.header-img {
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+    opacity: 40%;
+}
+
+.title {
+    position: absolute;
+    top: 3rem;
+    left: 4rem;
+    color: white;
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+}
+
+.my-watchlist-text {
+    position: absolute;
+    top: 5.5rem;
+    right: 5rem;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
