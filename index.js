@@ -3,6 +3,8 @@ const searchBtn = document.getElementById("search-btn")
 const movieContainer = document.getElementById("movie-container")
 
 function searchMovie() {
+    removeMovieContainerElems()
+
     fetch(`http://www.omdbapi.com/?s=${searchInput.value}&apikey=28131219`)
         .then(res => res.json())
         .then(data => {
@@ -45,6 +47,10 @@ function displayMovie(imgLink, title, rating, runTime, genre, description) {
     `
 }
 
+
+function removeMovieContainerElems() {
+    movieContainer.innerHTML = ""
+}
 /* What to display */
 
 /* Img, Title, Rating, RunTime, Genres, AddToWatchList, Description */
