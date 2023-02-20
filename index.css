@@ -66,6 +66,7 @@ header {
 .movie-name-input {
     background-color: #2E2E2F;
     height: 3rem;
+    padding: 0;
     border: none;
     color: #A5A5A5;
     text-indent: 3rem;
@@ -77,7 +78,7 @@ header {
 .search-btn {
     height: 3rem;
     border: none;
-    margin-left: -0.3rem;
+    padding: 0;
     background-color: #4B4B4B;
     color: white;
     width: 10vw;
@@ -148,7 +149,7 @@ header {
     }
     
     .search-btn {
-        width: 15vw;
+        width: 20vw;
     }
     
     .search-icon {
