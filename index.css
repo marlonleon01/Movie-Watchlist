@@ -91,3 +91,86 @@ header {
     top: 1rem;
     color: #A5A5A5;
 }
+
+
+/* Media Queries for Phone */
+@media screen and (max-width: 550px) {
+    header {
+        height: 10rem;
+    }
+    
+    .header-img {
+        height: 10rem;
+    }
+    
+    .title {
+        position: absolute;
+        top: 2.7rem;
+        left: 1.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .my-watchlist-text {
+        position: absolute;
+        top: 3.5rem;
+        right: 2rem;
+        font-size: 1rem;
+    }
+    
+    
+    /* Search bar */
+    
+    .movie-name-input {
+        width: 65vw;
+    }
+    
+    .search-btn {
+        width: 15vw;
+    }
+    
+    .icon {
+        left: 13%;
+    }
+}
+
+/* Media Queries for Tablet */
+
+@media screen and (min-width: 551px) and (max-width: 1024px) {
+    header {
+        height: 12rem;
+    }
+    
+    .header-img {
+        height: 12rem;
+    }
+    
+    .title {
+        position: absolute;
+        top: 2.7rem;
+        left: 5rem;
+        font-size: 2.5rem;
+    }
+    
+    .my-watchlist-text {
+        position: absolute;
+        top: 4.3rem;
+        right: 5rem;
+        font-size: 1.2rem;
+    }
+    
+    
+    /* Search bar */
+    
+    .movie-name-input {
+        width: 65vw;
+        text-indent: 3.5rem;
+    }
+    
+    .search-btn {
+        width: 15vw;
+    }
+    
+    .icon {
+        left: 13%;
+    }
+}
