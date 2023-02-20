@@ -51,3 +51,43 @@ header {
     color: white;
     text-decoration: none;
 }
+
+
+/* Search bar */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    top: -20px;
+}
+
+.movie-name-input {
+    background-color: #2E2E2F;
+    height: 3rem;
+    border: none;
+    color: #A5A5A5;
+    text-indent: 3rem;
+    width: 50vw;
+    border-radius: 5px 0 0 5px;
+    font-size: 1.2rem;
+}
+
+.search-btn {
+    height: 3rem;
+    border: none;
+    margin-left: -0.3rem;
+    background-color: #4B4B4B;
+    color: white;
+    width: 10vw;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+}
+
+.icon {
+    position: absolute;
+    left: 21%;
+    top: 1rem;
+    color: #A5A5A5;
+}
