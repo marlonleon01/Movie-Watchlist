@@ -122,7 +122,10 @@ header {
     margin: 1rem 5rem 0rem 5rem;
     color: white;
     display: flex;
+    align-items: center;
     gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #2C2C2C;
 }
 
 .movie-poster {
@@ -150,6 +153,37 @@ header {
     margin: 0 0 0 0.2rem;
 }
 
+.movie-runtime-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.movie-genre {
+    margin-left: 2rem;
+}
+
+.plus-icon {
+    margin-left: 2rem;
+    background-color: white;
+    color: black;
+    padding: 0.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.add-to-watchlist-text {
+    margin-left: 0.3rem;
+    cursor: pointer;
+}
+
+.movie-description {
+    color: #A5A5A5;
+}
+
+.movie-runtime, .movie-genre, .plus-icon, .add-to-watchlist-text {
+    font-size: 0.9rem;
+}
 
 
 /* Media Queries for Phone */
