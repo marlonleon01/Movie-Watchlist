@@ -85,12 +85,35 @@ header {
     font-size: 1rem;
 }
 
-.icon {
+.search-icon {
     position: absolute;
     left: 21%;
     top: 1rem;
     color: #A5A5A5;
 }
+
+/* Film section */
+
+.movie-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #2E2E2F;
+}
+
+.film-icon {
+    font-size: 6rem;
+    margin: 20rem 0 1rem 0;
+}
+
+.film-section-text {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
 
 
 /* Media Queries for Phone */
@@ -128,8 +151,12 @@ header {
         width: 15vw;
     }
     
-    .icon {
+    .search-icon {
         left: 13%;
+    }
+
+    .film-icon {
+        margin: 12rem 0 1rem 0;
     }
 }
 
@@ -170,7 +197,7 @@ header {
         width: 15vw;
     }
     
-    .icon {
+    .search-icon {
         left: 13%;
     }
 }
