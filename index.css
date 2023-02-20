@@ -93,7 +93,7 @@ header {
     color: #A5A5A5;
 }
 
-/* Film section */
+/* Film section without movies */
 
 .movie-container {
     width: 100%;
@@ -113,6 +113,41 @@ header {
     font-size: 1.5rem;
     margin: 0;
     font-weight: 700;
+}
+
+
+/* Film section with movies */
+
+.movie {
+    margin: 1rem 5rem 0rem 5rem;
+    color: white;
+    display: flex;
+    gap: 2rem;
+}
+
+.movie-poster {
+    height: 15rem
+}
+
+.movie-title-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.movie-title {
+    font-weight: 400;
+    margin: 0;
+}
+
+.star-icon {
+    margin-left: 1rem;
+    color: #FEC654;
+    font-size: 0.9rem;
+}
+
+.movie-rating {
+    margin: 0 0 0 0.2rem;
 }
 
 
