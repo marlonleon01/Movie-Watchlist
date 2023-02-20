@@ -237,10 +237,6 @@ header {
 
     .movie {
         margin: 1rem 1.5rem 0rem 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        padding-bottom: 1.5rem;
     }
 
     .movie-poster {
@@ -260,9 +256,7 @@ header {
     }
 
     .movie-middle-section {
-        justify-content: flex-start;
         align-items: flex-start;
-        align-content:  flex-start;
         flex-direction: column;
     }
 
