@@ -2,7 +2,7 @@ const searchInput = document.getElementById("movie-name-input")
 const searchBtn = document.getElementById("search-btn")
 const movieContainer = document.getElementById("movie-container")
 const placeholderPost = `./image/NoPosterAvailable.jpg`
-const watchlistContainer = document.getElementById("watchlist-container")
+const watchlistBtn = document.getElementsByClassName("add-to-watchlist-container")
 
 let movies = []
 let watchlist = []
@@ -18,6 +18,7 @@ function searchMovie() {
                     .then(res => res.json())
                     .then(data => {
                         displayMovie(data)
+                        watchlistListener(data)
                     })
             }
         })
@@ -46,11 +47,7 @@ function displayMovie(movie) {
                         <p class="movie-runtime">${movie.Runtime}</p>
                         <p class="movie-genre">${movie.Genre}</p>
                     </div>
-                    <div 
-                        class="add-to-watchlist-container" 
-                        id="add-to-watchlist-container"
-                        data-id="${movie.imdbID}"
-                    >
+                    <div class="add-to-watchlist-container">
                         <i class="fa-solid fa-plus plus-icon"></i>
                         <p class="add-to-watchlist-text">Watchlist</p>
                     </div>
@@ -66,3 +63,21 @@ function removeMovieContainerElems() {
     movieContainer.innerHTML = ""
 }
 
+function watchlistListener(movie) {
+    for(let i = 0; i < watchlistBtn.length; ++i) {
+        watchlistBtn[i].addEventListener("click", () => {
+            addToWatchlist(movies[i]);
+        });
+    }
+}
+
+function addToWatchlist(movie) {
+    watchlist.push(movie)
+    if(!localStorage.getItem('watchlist')) {
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    } else {
+        const existing = JSON.parse(localStorage.getItem("watchlist"))
+        existing.push(movie);
+        localStorage.setItem("watchlist", JSON.stringify(existing))
+    }
+}
