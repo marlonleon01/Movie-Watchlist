@@ -2,11 +2,11 @@ const searchInput = document.getElementById("movie-name-input")
 const searchBtn = document.getElementById("search-btn")
 const movieContainer = document.getElementById("movie-container")
 const placeholderPost = `./image/NoPosterAvailable.jpg`
+const watchlistContainer = document.getElementById("watchlist-container")
 
 
 function searchMovie() {
     removeMovieContainerElems()
-
     fetch(`http://www.omdbapi.com/?s=${searchInput.value}&apikey=28131219`)
         .then(res => res.json())
         .then(data => {
@@ -14,13 +14,10 @@ function searchMovie() {
                 fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=28131219`)
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
-
                         if (data.Poster === "N/A") {
                             data.Poster = placeholderPost
                         }
-                        displayMovie(data.Poster, data.Title, data.imdbRating, 
-                                        data.Runtime, data.Genre, data.Plot)
+                        displayMovie(data)
                     })
             }
         })
@@ -28,27 +25,31 @@ function searchMovie() {
 
 searchBtn.addEventListener("click", searchMovie)
 
-function displayMovie(imgLink, title, rating, runTime, genre, description) {
+function displayMovie(movie) {
     movieContainer.innerHTML += `
-        <div class="movie">
-                <img src="${imgLink}" class="movie-poster">
+        <div class="movie" id="${movie.imdbID}">
+                <img src="${movie.Poster}" class="movie-poster">
             <div>
                 <div class="movie-title-container">
-                    <h2 class="movie-title">${title}</h2>
+                    <h2 class="movie-title">${movie.Title}</h2>
                     <i class="fa-solid fa-star star-icon"></i>
-                    <p class="movie-rating">${rating}</p>
+                    <p class="movie-rating">${movie.imdbRating}</p>
                 </div>
                 <div class="movie-middle-section">
                     <div class="movie-runtime-container">
-                        <p class="movie-runtime">${runTime}</p>
-                        <p class="movie-genre">${genre}</p>
+                        <p class="movie-runtime">${movie.Runtime}</p>
+                        <p class="movie-genre">${movie.Genre}</p>
                     </div>
-                    <div class="add-to-watchlist-container">
+                    <div 
+                        class="add-to-watchlist-container" 
+                        id="add-to-watchlist-container"
+                        data-id="${movie.imdbID}"
+                    >
                         <i class="fa-solid fa-plus plus-icon"></i>
                         <p class="add-to-watchlist-text">Watchlist</p>
                     </div>
                 </div>
-                <p class="movie-description">${description}</p>
+                <p class="movie-description">${movie.Plot}</p>
             </div>
         </div>
     `
@@ -58,3 +59,4 @@ function displayMovie(imgLink, title, rating, runTime, genre, description) {
 function removeMovieContainerElems() {
     movieContainer.innerHTML = ""
 }
+
