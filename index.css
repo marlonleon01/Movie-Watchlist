@@ -93,7 +93,7 @@ header {
     color: #A5A5A5;
 }
 
-/* Film section without movies */
+/* Film section */
 
 .movie-container {
     width: 100%;
@@ -120,9 +120,6 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
 }
-
-
-/* Film section with movies */
 
 .movie {
     margin: 1rem 5rem 0rem 5rem;
@@ -196,6 +193,41 @@ header {
 }
 
 
+/* Watchlist */
+
+.watchlist-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #2E2E2F;
+}
+
+.watchlist-empty-container {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.watchlist-empty-text {
+    color: #787878;
+}
+
+.add-movies-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
 /* Media Queries for Phone */
 @media screen and (max-width: 550px) {
     header {
@@ -239,7 +271,7 @@ header {
         margin: 12rem 0 1rem 0;
     }
 
-    /* Film section with movies */
+    /* Film section */
 
     .movie {
         margin: 1rem 1.5rem 0rem 1.5rem;
@@ -284,6 +316,13 @@ header {
 
     .movie-description {
         font-size: 0.7rem;
+    }
+
+
+    /* Watchlist */
+
+    .watchlist-empty-container {
+        width: 80vw;
     }
 }
 
