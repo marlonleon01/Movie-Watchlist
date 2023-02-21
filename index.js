@@ -4,9 +4,12 @@ const movieContainer = document.getElementById("movie-container")
 const placeholderPost = `./image/NoPosterAvailable.jpg`
 const watchlistContainer = document.getElementById("watchlist-container")
 
+let movies = []
+let watchlist = []
 
 function searchMovie() {
     removeMovieContainerElems()
+    movies = []
     fetch(`http://www.omdbapi.com/?s=${searchInput.value}&apikey=28131219`)
         .then(res => res.json())
         .then(data => {
@@ -14,9 +17,6 @@ function searchMovie() {
                 fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=28131219`)
                     .then(res => res.json())
                     .then(data => {
-                        if (data.Poster === "N/A") {
-                            data.Poster = placeholderPost
-                        }
                         displayMovie(data)
                     })
             }
@@ -26,6 +26,12 @@ function searchMovie() {
 searchBtn.addEventListener("click", searchMovie)
 
 function displayMovie(movie) {
+    movies.push(movie)
+
+    if (movie.Poster === "N/A") {
+        movie.Poster = placeholderPost
+    }
+
     movieContainer.innerHTML += `
         <div class="movie" id="${movie.imdbID}">
                 <img src="${movie.Poster}" class="movie-poster">
