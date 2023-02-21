@@ -20,7 +20,7 @@ function renderWatchlist () {
                             <p class="movie-genre">${movie.Genre}</p>
                         </div>
                         <div class="add-to-watchlist-container" id="add-to-watchlist-container">
-                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-solid fa-minus minus-icon"></i>
                             <p class="add-to-watchlist-text">Remove</p>
                         </div>
                     </div>
