@@ -58,6 +58,3 @@ function displayMovie(imgLink, title, rating, runTime, genre, description) {
 function removeMovieContainerElems() {
     movieContainer.innerHTML = ""
 }
-/* What to display */
-
-/* Img, Title, Rating, RunTime, Genres, AddToWatchList, Description */
