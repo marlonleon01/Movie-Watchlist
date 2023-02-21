@@ -1,6 +1,8 @@
 const searchInput = document.getElementById("movie-name-input")
 const searchBtn = document.getElementById("search-btn")
 const movieContainer = document.getElementById("movie-container")
+const placeholderPost = `./image/NoPosterAvailable.jpg`
+
 
 function searchMovie() {
     removeMovieContainerElems()
@@ -13,7 +15,12 @@ function searchMovie() {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-                        displayMovie(data.Poster, data.Title, data.imdbRating, data.Runtime, data.Genre, data.Plot)
+
+                        if (data.Poster === "N/A") {
+                            data.Poster = placeholderPost
+                        }
+                        displayMovie(data.Poster, data.Title, data.imdbRating, 
+                                        data.Runtime, data.Genre, data.Plot)
                     })
             }
         })
