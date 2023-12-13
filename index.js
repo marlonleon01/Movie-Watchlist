@@ -10,7 +10,7 @@ let watchlist = []
 function searchMovie() {
     removeMovieContainerElems()
     movies = []
-    fetch(`http://www.omdbapi.com/?s=${searchInput.value}&apikey=28131219`)
+    fetch(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=28131219`)
         .then(res => res.json())
         .then(data => {
             for (let movie of data.Search) {
