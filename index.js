@@ -14,7 +14,7 @@ function searchMovie() {
         .then(res => res.json())
         .then(data => {
             for (let movie of data.Search) {
-                fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=28131219`)
+                fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=28131219`)
                     .then(res => res.json())
                     .then(data => {
                         displayMovie(data)
